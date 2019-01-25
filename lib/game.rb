@@ -23,6 +23,6 @@ class Game
     end
 
     def original_words
-        ["PILSEN","CRISTAL","CORONA","CUSQUEÑA","BRAHMA"]
+        ["REFRIGERADOR","LAVADORA","COCINA","LICUADORA","TOSTADORA"]
     end
 end
