@@ -6,4 +6,10 @@ describe "Crazy Words" do
         
         expect( game.original_word.length ).to be > 0        
     end
+
+    it "Default word is scrambled" do
+        game = Game.new
+        
+        expect( game.scrambled_word.length ).to be > 0        
+    end
 end
