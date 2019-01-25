@@ -30,3 +30,7 @@ Feature: Palabras locas
         And Vuelvo a intentar
         Then mostrara la palabra "Tienes 2 intentos"
 
+    Scenario: Usuario falló el máximo de intentos
+        Given Visitar la pagina inicial
+        When Fallo 3 veces
+        Then mostrara la palabra "Perdiste"

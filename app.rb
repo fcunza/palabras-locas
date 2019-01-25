@@ -19,9 +19,13 @@ post '/validate' do
     if @@game.isWordCorrect answer
         @result_message = "Respuesta correcta"        
     else 
+        @@game.decrease_attempt                
         @result_message = "Respuesta incorrecta"
-        @@game.decrease_attempt
     end
 
-    erb :result
+    if @@game.attemps == 0
+        erb :result_fail
+    else
+        erb :result
+    end
 end
