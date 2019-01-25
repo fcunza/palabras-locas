@@ -17,7 +17,12 @@ class Game
     def attempts
         @attempts
     end
+
     def decrease_attempt
         @attempts -= 1
+    end
+
+    def original_words
+        ["PILSEN","CRISTAL","CORONA","CUSQUEÑA","BRAHMA"]
     end
 end

@@ -36,4 +36,10 @@ describe "Crazy Words" do
         game.decrease_attempt
         expect( game.attempts ).to be 2        
     end
+
+    it "Words list" do
+        game = Game.new
+        expect( game.original_words.length ).to be > 0
+    end
+
 end
