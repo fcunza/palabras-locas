@@ -1,3 +1,5 @@
 Feature: Palabras locas
 
-    Scenario: Validar Resultado
+    Scenario: Mostrar Palabra
+        Given Visitar la pagina inicial
+        Then mostrara la palabra "EMUCRCBU" 
