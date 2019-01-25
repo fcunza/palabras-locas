@@ -12,4 +12,10 @@ describe "Crazy Words" do
         
         expect( game.scrambled_word.length ).to be > 0        
     end
+
+    it "Validate word" do
+        game = Game.new
+        
+        expect( game.isWordCorrect "CUCUMBER" ).to be true        
+    end
 end
