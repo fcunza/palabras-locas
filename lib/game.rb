@@ -1,17 +1,20 @@
 class Game
     def initialize
         @attempts = 3
+        @original_words = ["REFRIGERADOR","LAVADORA","COCINA","LICUADORA","TOSTADORA"]
+        @current_word = @original_words[0]
     end
-    def original_word
-        "CUCUMBER"
+
+    def current_word
+        @current_word 
     end
 
     def scrambled_word
-        "EMUCRCBU"
+        @current_word.split('').shuffle.join
     end
 
     def isWordCorrect word
-        original_word == word.upcase
+        current_word == word.upcase
     end
 
     def attempts
@@ -23,6 +26,6 @@ class Game
     end
 
     def original_words
-        ["REFRIGERADOR","LAVADORA","COCINA","LICUADORA","TOSTADORA"]
+        @original_words   
     end
 end
