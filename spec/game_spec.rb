@@ -28,12 +28,12 @@ describe "Crazy Words" do
     it "Initialize with 3 attempts" do
         game = Game.new
         
-        expect( game.attemps ).to be 3        
+        expect( game.attempts ).to be 3        
     end
 
     it "Attempts are decreased" do
         game = Game.new
         game.decrease_attempt
-        expect( game.attemps ).to be 2        
+        expect( game.attempts ).to be 2        
     end
 end

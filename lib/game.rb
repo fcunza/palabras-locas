@@ -14,7 +14,7 @@ class Game
         original_word == word.upcase
     end
 
-    def attemps
+    def attempts
         @attempts
     end
     def decrease_attempt

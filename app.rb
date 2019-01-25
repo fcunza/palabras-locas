@@ -9,7 +9,7 @@ get '/' do
     end
 
     @scrambled_word = @@game.scrambled_word
-    @attemps = @@game.attemps
+    @attempts = @@game.attempts
     erb :game
 end
 
@@ -24,7 +24,7 @@ post '/validate' do
         @result_message = "Respuesta incorrecta"
     end
 
-    if @@game.attemps <= 0        
+    if @@game.attempts <= 0        
         erb :result_fail        
     elsif is_correct
         erb :result_win
