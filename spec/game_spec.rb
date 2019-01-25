@@ -48,4 +48,10 @@ describe "Crazy Words" do
         expect( game.status_message ).to eq "Hello"
     end
 
+    it "Go to next word" do
+        game = Game.new
+        game.go_next_word
+        expect( game.current_word ).to eq "LAVADORA"
+    end
+
 end

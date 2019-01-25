@@ -19,7 +19,8 @@ post '/validate' do
     @result_message = ""
     is_correct = @@game.isWordCorrect answer
     if is_correct
-        @@game.status_message = "Palabra acertada"        
+        @@game.status_message = "Palabra acertada"    
+        @@game.go_next_word    
         @scrambled_word = @@game.scrambled_word
         @attempts = @@game.attempts
         @status_message = @@game.status_message

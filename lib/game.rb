@@ -2,16 +2,17 @@ class Game
     def initialize
         @attempts = 3
         @original_words = ["REFRIGERADOR","LAVADORA","COCINA","LICUADORA","TOSTADORA"]
-        @current_word = @original_words[0]
         @status_message = ""
+        @current_word_index = 0
+        @current_word = @original_words[0]
     end
 
     def current_word
-        @current_word 
+        @current_word = @original_words[@current_word_index]
     end
 
     def scrambled_word
-        @current_word.split('').shuffle.join
+        current_word.split('').shuffle.join
     end
 
     def isWordCorrect word
@@ -24,7 +25,7 @@ class Game
 
     def decrease_attempt
         @attempts -= 1
-    end
+    end    
 
     def original_words
         @original_words   
@@ -36,5 +37,9 @@ class Game
 
     def status_message
         @status_message          
-    end    
+    end
+    
+    def go_next_word
+        @current_word_index += 1
+    end
 end
