@@ -13,4 +13,10 @@ Feature: Palabras locas
         Given Visitar la pagina inicial
         When Ingresa la palabra "CUBERMCU"
         Then Mostrará mensaje "Respuesta incorrecta"
+    
+    Scenario: Volver a intentar
+        Given Visitar la pagina inicial
+        When Ingresa la palabra "CUBERMCU"
+        And Vuelvo a intentar
+        Then mostrara la palabra "EMUCRCBU"
 

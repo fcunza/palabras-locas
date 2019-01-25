@@ -14,3 +14,7 @@ end
 Then(/^Mostrará mensaje "(.*?)"$/) do |result_message|
     last_response.body.should =~ /#{result_message}/m
 end
+
+When(/^Vuelvo a intentar$/) do
+    click_link("Volver a intentar")
+end
