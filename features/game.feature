@@ -9,3 +9,8 @@ Feature: Palabras locas
         When Ingresa la palabra "CUCUMBER"
         Then Mostrará mensaje "Respuesta correcta"
 
+    Scenario: Mostrar respuesta incorrecta
+        Given Visitar la pagina inicial
+        When Ingresa la palabra "CUBERMCU"
+        Then Mostrará mensaje "Respuesta incorrecta"
+

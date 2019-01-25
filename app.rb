@@ -13,6 +13,8 @@ post '/validar' do
     @resultado = ""
     if res
         @resultado = "Respuesta correcta"
+    else 
+        @resultado = "Respuesta incorrecta"
     end
 
     erb :result
