@@ -1,20 +1,19 @@
 require 'sinatra'
-require './lib/Game.rb'
+require './lib/game.rb'
 
 get '/' do
     @@game = Game.new
-    @palabra=@@game.scrambled_word
+    @scrambled_word=@@game.scrambled_word
     erb :game
 end
 
-post '/validar' do
-    palabra = params[:palabra_usuario]
-    res = @@game.isWordCorrect palabra
-    @resultado = ""
-    if res
-        @resultado = "Respuesta correcta"
+post '/validate' do
+    answer = params[:answer]    
+    @result_message = ""
+    if @@game.isWordCorrect answer
+        @result_message = "Respuesta correcta"
     else 
-        @resultado = "Respuesta incorrecta"
+        @result_message = "Respuesta incorrecta"
     end
 
     erb :result

@@ -1,4 +1,4 @@
-require './lib/Game.rb'
+require './lib/game.rb'
 
 describe "Crazy Words" do
     it "Default word exists" do
