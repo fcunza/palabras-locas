@@ -10,6 +10,7 @@ get '/' do
 
     @scrambled_word = @@game.scrambled_word
     @attempts = @@game.attempts
+    @status_message = @@game.status_message
     erb :game
 end
 
@@ -18,8 +19,13 @@ post '/validate' do
     @result_message = ""
     is_correct = @@game.isWordCorrect answer
     if is_correct
-        @result_message = "Respuesta correcta"        
+        @@game.status_message = "Palabra acertada"        
+        @scrambled_word = @@game.scrambled_word
+        @attempts = @@game.attempts
+        @status_message = @@game.status_message
+        return erb :game        
     else 
+        @@game.status_message = ""
         @@game.decrease_attempt                
         @result_message = "Respuesta incorrecta"
     end

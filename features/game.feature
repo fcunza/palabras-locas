@@ -1,9 +1,8 @@
 Feature: Palabras locas
-
-    Scenario: Mostrar respuesta correcta
+    Scenario: Usuario acertó, mostrar siguiente palabra
         Given Visitar la pagina inicial
         When Ingresa la palabra "REFRIGERADOR"
-        Then Mostrará mensaje "Ganaste"
+        Then mostrara la palabra "Palabra acertada"        
 
     Scenario: Mostrar respuesta incorrecta
         Given Visitar la pagina inicial
@@ -24,5 +23,6 @@ Feature: Palabras locas
         Given Visitar la pagina inicial
         When Fallo 3 veces
         Then mostrara la palabra "Perdiste"
+
 
     

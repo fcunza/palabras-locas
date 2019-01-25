@@ -42,4 +42,10 @@ describe "Crazy Words" do
         expect( game.original_words.length ).to be > 0
     end
 
+    it "Set Status Message" do
+        game = Game.new
+        game.status_message = "Hello"
+        expect( game.status_message ).to eq "Hello"
+    end
+
 end
