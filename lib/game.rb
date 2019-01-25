@@ -1,4 +1,7 @@
 class Game
+    def initialize
+        @attempts = 3
+    end
     def original_word
         "CUCUMBER"
     end
@@ -12,6 +15,9 @@ class Game
     end
 
     def attemps
-        3
+        @attempts
+    end
+    def decrease_attempt
+        @attempts -= 1
     end
 end

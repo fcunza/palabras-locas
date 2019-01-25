@@ -30,4 +30,10 @@ describe "Crazy Words" do
         
         expect( game.attemps ).to be 3        
     end
+
+    it "Attempts are decreased" do
+        game = Game.new
+        game.decrease_attempt
+        expect( game.attemps ).to be 2        
+    end
 end
