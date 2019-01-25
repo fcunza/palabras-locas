@@ -18,4 +18,10 @@ describe "Crazy Words" do
         
         expect( game.isWordCorrect "CUCUMBER" ).to be true        
     end
+
+    it "Validate case insensitive word" do
+        game = Game.new
+        
+        expect( game.isWordCorrect "cucumber" ).to be true        
+    end
 end

@@ -8,6 +8,6 @@ class Game
     end
 
     def isWordCorrect word
-        original_word == word
+        original_word == word.upcase
     end
 end
