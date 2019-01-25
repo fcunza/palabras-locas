@@ -3,7 +3,8 @@ require './lib/game.rb'
 
 get '/' do
     @@game = Game.new
-    @scrambled_word=@@game.scrambled_word
+    @scrambled_word = @@game.scrambled_word
+    @attemps = @@game.attemps
     erb :game
 end
 
