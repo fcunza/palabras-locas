@@ -16,15 +16,18 @@ end
 post '/validate' do
     answer = params[:answer]    
     @result_message = ""
-    if @@game.isWordCorrect answer
+    is_correct = @@game.isWordCorrect answer
+    if is_correct
         @result_message = "Respuesta correcta"        
     else 
         @@game.decrease_attempt                
         @result_message = "Respuesta incorrecta"
     end
 
-    if @@game.attemps == 0
-        erb :result_fail
+    if @@game.attemps <= 0        
+        erb :result_fail        
+    elsif is_correct
+        erb :result_win
     else
         erb :result
     end
