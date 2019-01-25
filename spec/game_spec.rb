@@ -24,4 +24,10 @@ describe "Crazy Words" do
         
         expect( game.isWordCorrect "cucumber" ).to be true        
     end
+
+    it "Initialize with 3 attempts" do
+        game = Game.new
+        
+        expect( game.attemps ).to be 3        
+    end
 end

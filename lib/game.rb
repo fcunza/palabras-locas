@@ -10,4 +10,8 @@ class Game
     def isWordCorrect word
         original_word == word.upcase
     end
+
+    def attemps
+        3
+    end
 end
