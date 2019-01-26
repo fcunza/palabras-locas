@@ -30,8 +30,8 @@ When(/^Fallo (\d+) veces$/) do |attempts|
     click_button("Validar")
 end
 
-When(/^Elige reintentar$/) do
-    click_link("Reintentar")
+When(/^Elige jugar de nuevo$/) do
+    click_link("Jugar de nuevo")
 end
 
 When(/^acerto (\d+) veces$/) do |success|

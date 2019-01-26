@@ -24,13 +24,19 @@ Feature: Palabras locas
         When Fallo 3 veces
         Then mostrara la palabra "Perdiste"
 
-    Scenario: Usuario falló el máximo de intentos
+    Scenario: Reintentar juego por perdedor
         Given Visitar la pagina inicial
         When Fallo 3 veces
-        And Elige reintentar 
+        And Elige jugar de nuevo 
+        Then mostrara la palabra "Tienes 3 intentos"
+    
+    Scenario: Reintentar juego por que gane y me gusto
+        Given Visitar la pagina inicial
+        When acerto 5 veces
+        And Elige jugar de nuevo
         Then mostrara la palabra "Tienes 3 intentos"
 
-    Scenario: Reintentar juevo tras perder
+    Scenario: Usuario gano luego de 5 aciertos
         Given Visitar la pagina inicial
         When acerto 5 veces
         Then mostrara la palabra "Ganaste"
