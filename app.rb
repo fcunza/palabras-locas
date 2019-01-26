@@ -19,12 +19,17 @@ post '/validate' do
     @result_message = ""
     is_correct = @@game.isWordCorrect answer
     if is_correct
+        @@game.success +=1
+        if @@game.success == 5
+            return erb:result_win
+        end
         @@game.status_message = "Palabra acertada"    
         @@game.go_next_word    
         @scrambled_word = @@game.scrambled_word
         @attempts = @@game.attempts
         @status_message = @@game.status_message
-        return erb :game        
+        return erb :game  
+            
     else 
         @@game.status_message = ""
         @@game.decrease_attempt                

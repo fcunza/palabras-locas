@@ -33,3 +33,16 @@ end
 When(/^Elige reintentar$/) do
     click_link("Reintentar")
 end
+
+When(/^acerto (\d+) veces$/) do |success|
+    original_words = ["REFRIGERADOR","LAVADORA","COCINA","LICUADORA","TOSTADORA"]
+    i = 0
+	while i < original_words.length
+		fill_in("answer", :with => original_words[i])
+        click_button("Validar")
+        i+=1
+  	 end
+
+end
+
+

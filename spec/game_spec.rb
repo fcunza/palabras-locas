@@ -53,5 +53,4 @@ describe "Crazy Words" do
         game.go_next_word
         expect( game.current_word ).to eq "LAVADORA"
     end
-
-end
+ end

@@ -5,6 +5,7 @@ class Game
         @status_message = ""
         @current_word_index = 0
         @current_word = @original_words[0]
+        @success =0
     end
 
     def current_word
@@ -37,6 +38,14 @@ class Game
 
     def status_message
         @status_message          
+    end
+
+    def success=(success)
+        @success = success            
+    end
+
+    def success
+        @success          
     end
     
     def go_next_word
