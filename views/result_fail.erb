@@ -3,11 +3,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <audio id="my_audio" src="you_lose.mp3"></audio>
     <div class="container">
         <h1>Perdiste</h1>
         <img src="lose.png" width="400"/>
         <br>
         <a href="/" >Jugar de nuevo</a>
     </div>
+    <script>
+        window.onload = function() {
+
+            document.getElementById("my_audio").play();
+            setTimeout( function () {
+                document.getElementById('my_audio').pause();
+
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
