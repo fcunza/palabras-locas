@@ -1,14 +1,26 @@
-require 'palabra.rb'
+require './lib/palabra.rb'
 
 class Game
     def initialize
         @attempts = 3
         @original_words = [
-            Palabra.new("REFRIGERADOR", ""),
-            Palabra.new("LAVADORA", ""),
-            Palabra.new("COCINA", ""),
-            Palabra.new("LICUADORA", ""),
-            Palabra.new("TOSTADORA", "")]
+            Palabra.new("REFRIGERADOR","Tan frio como el corazón de tu ex"),
+            Palabra.new("LAVADORA","Da vuelvas y vueltas "),
+            Palabra.new("BILLETERA","Te gusta tenerla gorda"),
+            Palabra.new("ESCOBA","Es largo con pelos"),
+            Palabra.new("LICUADORA","Tiene velocidades"),
+            Palabra.new("ZANCUDO","Te chupa la sangre"),
+            Palabra.new("CERVEZA","Te deja mareado"),
+            Palabra.new("CELULAR","No puedes vivir sin eso"),
+            Palabra.new("PROFESOR","Es hemano de Berlin"),
+            Palabra.new("VENTILADOR","Te deja despeinado"),
+            Palabra.new("TELEVISOR","Te entretiene cuando se prende"),
+            Palabra.new("COMPUTADORA","Tu mejor aliado"),
+            Palabra.new("EDIFICIO","Si es muy alto da miedo"),
+            Palabra.new("ELEFANTE","Siempre va pa' lante"),
+            Palabra.new("ANACONDA","Te abraza hasta la muerte"),
+            Palabra.new("ORNITORRINCO","Es un detective"),
+            Palabra.new("DENTISTA","Te deja con la boca abierta")]
         @status_message = ""
         @current_word_index = 0
         @current_word = @original_words[0].palabra

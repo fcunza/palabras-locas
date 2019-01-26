@@ -28,7 +28,7 @@ When(/^Elige jugar de nuevo$/) do
 end
 
 When(/^acerto (\d+) veces$/) do |success|
-    original_words = ["REFRIGERADOR","LAVADORA","COCINA","LICUADORA","TOSTADORA"]
+    original_words = ["REFRIGERADOR","LAVADORA","BILLETERA","ESCOBA","LICUADORA"]
     i = 0
 	while i < original_words.length
 		fill_in("answer", :with => original_words[i])
