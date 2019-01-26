@@ -1,15 +1,22 @@
+require 'palabra.rb'
+
 class Game
     def initialize
         @attempts = 3
-        @original_words = ["REFRIGERADOR","LAVADORA","COCINA","LICUADORA","TOSTADORA"]
+        @original_words = [
+            Palabra.new("REFRIGERADOR", ""),
+            Palabra.new("LAVADORA", ""),
+            Palabra.new("COCINA", ""),
+            Palabra.new("LICUADORA", ""),
+            Palabra.new("TOSTADORA", "")]
         @status_message = ""
         @current_word_index = 0
-        @current_word = @original_words[0]
+        @current_word = @original_words[0].palabra
         @success =0
     end
 
     def current_word
-        @current_word = @original_words[@current_word_index]
+        @current_word = @original_words[@current_word_index].palabra        
     end
 
     def scrambled_word
