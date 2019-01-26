@@ -15,19 +15,12 @@ Then(/^Mostrará mensaje "(.*?)"$/) do |result_message|
     last_response.body.should =~ /#{result_message}/m
 end
 
-When(/^Vuelvo a intentar$/) do
-    click_link("Volver a intentar")
-end
-
 When(/^Fallo (\d+) veces$/) do |attempts|
 
-    (attempts.to_i - 1).times do
+    (attempts.to_i).times do
         fill_in("answer", :with => "angel")
         click_button("Validar")
-        click_link("Volver a intentar")
     end
-    fill_in("answer", :with => "angel")
-    click_button("Validar")
 end
 
 When(/^Elige jugar de nuevo$/) do

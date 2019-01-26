@@ -31,16 +31,15 @@ post '/validate' do
         return erb :game  
             
     else 
-        @@game.status_message = ""
-        @@game.decrease_attempt                
-        @result_message = "Respuesta incorrecta"
-    end
+        @@game.status_message = "Palabra errada"
+        @@game.decrease_attempt
+        if @@game.attempts <= 0        
+            return erb :result_fail        
+        end
+        @scrambled_word = @@game.scrambled_word
+        @attempts = @@game.attempts
+        @status_message = @@game.status_message
 
-    if @@game.attempts <= 0        
-        erb :result_fail        
-    elsif is_correct
-        erb :result_win
-    else
-        erb :result
+        return erb :game
     end
 end

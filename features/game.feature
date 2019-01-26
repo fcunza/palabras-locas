@@ -4,10 +4,10 @@ Feature: Palabras locas
         When Ingresa la palabra "REFRIGERADOR"
         Then mostrara la palabra "Palabra acertada"        
 
-    Scenario: Mostrar respuesta incorrecta
+    Scenario: Mostrar mensaje de error al fallar
         Given Visitar la pagina inicial
         When Ingresa la palabra "CUBERMCU"
-        Then Mostrará mensaje "Respuesta incorrecta"
+        Then Mostrará mensaje "Palabra errada"
     
      Scenario: Cantidad de intentos iniciales
         Given Visitar la pagina inicial
@@ -16,7 +16,6 @@ Feature: Palabras locas
     Scenario: Reducir intentos por fallo
         Given Visitar la pagina inicial
         When Ingresa la palabra "CUBERMCU"
-        And Vuelvo a intentar
         Then mostrara la palabra "Tienes 2 intentos"
 
     Scenario: Usuario falló el máximo de intentos
