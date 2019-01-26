@@ -1,17 +1,19 @@
-<h1>Palabras locas</h1>
-
-
-<div>
-    <h3>¿Cuál es la palabra?</h3>
-    <br />
-    <h2><%= @status_message %></h2>
-    <br />
-    <h4>Tienes <%= @attempts %> intentos</h4>    
-    <br />
-    <h1 name="scrambled_word"><%= @scrambled_word %></h1>
-</div>
-
-<form action="/validate" method="POST">  
-    <input type="text" name="answer" autocomplete="off" autofocus />      
-    <button type="submit">Validar</button>
-</form>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Palabras locas</h1>
+        <img src="crazy.jpg" alt="" width="200">
+        <h3>¿Cuál es la palabra?</h3>
+        <h4>Tienes <%= @attempts %> intentos</h4>
+        <h1 name="scrambled_word"><%= @scrambled_word %></h1>
+        <form action="/validate" method="POST">  
+            <input type="text" name="answer" autocomplete="off" autofocus />      
+            <button class="primary-btn" type="submit">Validar</button>
+        </form>
+        <h2 class="status"><%= @status_message %></h2>
+    </div>
+</body>
+</html>

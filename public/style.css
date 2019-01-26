@@ -1,0 +1,34 @@
+body {
+    font-family: Arial;
+    color: #333;
+}
+
+input {
+    font-size: 16px;
+    padding: 5px;
+}
+.container {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center
+}
+
+.status {
+    color: #982727;
+}
+
+.primary-btn {
+    padding: 5px;
+    border: 2px solid #d87d13;
+    color: white;
+    background-color: #f6921e;
+    font-weight: bold;
+    font-size: 16px;
+    width: 115px;
+    border-radius: 8px;
+}
+
+.primary-btn:hover {
+    cursor: pointer;
+    background-color: #d87d13;
+}
