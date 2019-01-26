@@ -21,14 +21,15 @@ class Game
             Word.new("ANACONDA","Te abraza hasta la muerte"),
             Word.new("ORNITORRINCO","Es un detective"),
             Word.new("DENTISTA","Te deja con la boca abierta")]
+        @shuffle_words = @original_words.shuffle
         @status_message = ""
         @current_word_index = 0
-        @current_word = @original_words[0].word
+        @current_word = @shuffle_words[0].word
         @success =0
     end
 
     def current_word
-        @current_word = @original_words[@current_word_index].word        
+        @current_word = @shuffle_words[@current_word_index].word        
     end
 
     def scrambled_word
@@ -47,8 +48,8 @@ class Game
         @attempts -= 1
     end    
 
-    def original_words
-        @original_words   
+    def shuffle_words
+        @shuffle_words   
     end
 
     def status_message=(message)
@@ -72,6 +73,10 @@ class Game
     end
 
     def clue
-        @original_words[@current_word_index].clue
+        @shuffle_words[@current_word_index].clue
+    end
+
+    def mock_shuffle_words mock_words
+        @shuffle_words = mock_words
     end
 end

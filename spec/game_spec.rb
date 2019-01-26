@@ -15,13 +15,13 @@ describe "Crazy Words" do
 
     it "Validate word" do
         game = Game.new
-        
+        game.mock_shuffle_words [Word.new("REFRIGERADOR","")]
         expect( game.isWordCorrect "REFRIGERADOR" ).to be true        
     end
 
     it "Validate case insensitive word" do
         game = Game.new
-        
+        game.mock_shuffle_words [Word.new("REFRIGERADOR","")]
         expect( game.isWordCorrect "refrigerador" ).to be true        
     end
 
@@ -39,7 +39,7 @@ describe "Crazy Words" do
 
     it "Words list" do
         game = Game.new
-        expect( game.original_words.length ).to be > 0
+        expect( game.shuffle_words.length ).to be > 0
     end
 
     it "Set Status Message" do
@@ -50,12 +50,15 @@ describe "Crazy Words" do
 
     it "Go to next word" do
         game = Game.new
+        game.mock_shuffle_words [Word.new("",""),Word.new("LAVADORA","")]
         game.go_next_word
+        
         expect( game.current_word ).to eq "LAVADORA"
     end
 
     it "Get clue" do
         game = Game.new
+        game.mock_shuffle_words [Word.new("","Tan frio como el corazón de tu ex")]
         expect( game.clue ).to eq "Tan frio como el corazón de tu ex"
     end
  end
