@@ -53,4 +53,9 @@ describe "Crazy Words" do
         game.go_next_word
         expect( game.current_word ).to eq "LAVADORA"
     end
+
+    it "Get clue" do
+        game = Game.new
+        expect( game.clue ).to eq "Tan frio como el corazón de tu ex"
+    end
  end

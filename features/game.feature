@@ -2,42 +2,44 @@ Feature: Palabras locas
     Scenario: Usuario acertó, mostrar siguiente palabra
         Given Visitar la pagina inicial
         When Ingresa la palabra "REFRIGERADOR"
-        Then mostrara la palabra "Palabra acertada"        
+        Then mostrara el texto "Palabra acertada"        
 
     Scenario: Mostrar mensaje de error al fallar
         Given Visitar la pagina inicial
         When Ingresa la palabra "CUBERMCU"
-        Then Mostrará mensaje "Palabra errada"
+        Then mostrara el texto "Palabra errada"
     
      Scenario: Cantidad de intentos iniciales
         Given Visitar la pagina inicial
-        Then mostrara la palabra "Tienes 3 intentos"
+        Then mostrara el texto "Tienes 3 intentos"
     
     Scenario: Reducir intentos por fallo
         Given Visitar la pagina inicial
         When Ingresa la palabra "CUBERMCU"
-        Then mostrara la palabra "Tienes 2 intentos"
+        Then mostrara el texto "Tienes 2 intentos"
 
     Scenario: Usuario falló el máximo de intentos
         Given Visitar la pagina inicial
         When Fallo 3 veces
-        Then mostrara la palabra "Perdiste"
+        Then mostrara el texto "Perdiste"
 
     Scenario: Reintentar juego por perdedor
         Given Visitar la pagina inicial
         When Fallo 3 veces
         And Elige jugar de nuevo 
-        Then mostrara la palabra "Tienes 3 intentos"
+        Then mostrara el texto "Tienes 3 intentos"
     
     Scenario: Reintentar juego por que gane y me gusto
         Given Visitar la pagina inicial
         When acerto 5 veces
         And Elige jugar de nuevo
-        Then mostrara la palabra "Tienes 3 intentos"
+        Then mostrara el texto "Tienes 3 intentos"
 
     Scenario: Usuario gano luego de 5 aciertos
         Given Visitar la pagina inicial
         When acerto 5 veces
-        Then mostrara la palabra "Ganaste"
+        Then mostrara el texto "Ganaste"
 
-
+    Scenario: Mostrar pista
+        Given Visitar la pagina inicial
+        Then mostrara el texto "Tan frio como el corazón de tu ex"

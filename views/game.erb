@@ -9,6 +9,7 @@
         <h3>¿Cuál es la palabra?</h3>
         <h4>Tienes <%= @attempts %> intentos</h4>
         <h1 name="scrambled_word"><%= @scrambled_word %></h1>
+        <p class="clue">(<%= @clue %>)</p>
         <form action="/validate" method="POST">  
             <input type="text" name="answer" autocomplete="off" autofocus />      
             <button class="primary-btn" type="submit">Validar</button>

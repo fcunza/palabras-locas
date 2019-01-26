@@ -32,3 +32,8 @@ input {
     cursor: pointer;
     background-color: #d87d13;
 }
+
+.clue {
+    color: #0c6d0c;
+    font-weight: bold;
+}

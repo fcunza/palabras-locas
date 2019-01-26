@@ -1,34 +1,34 @@
-require './lib/palabra.rb'
+require './lib/word.rb'
 
 class Game
     def initialize
         @attempts = 3
         @original_words = [
-            Palabra.new("REFRIGERADOR","Tan frio como el corazón de tu ex"),
-            Palabra.new("LAVADORA","Da vuelvas y vueltas "),
-            Palabra.new("BILLETERA","Te gusta tenerla gorda"),
-            Palabra.new("ESCOBA","Es largo con pelos"),
-            Palabra.new("LICUADORA","Tiene velocidades"),
-            Palabra.new("ZANCUDO","Te chupa la sangre"),
-            Palabra.new("CERVEZA","Te deja mareado"),
-            Palabra.new("CELULAR","No puedes vivir sin eso"),
-            Palabra.new("PROFESOR","Es hemano de Berlin"),
-            Palabra.new("VENTILADOR","Te deja despeinado"),
-            Palabra.new("TELEVISOR","Te entretiene cuando se prende"),
-            Palabra.new("COMPUTADORA","Tu mejor aliado"),
-            Palabra.new("EDIFICIO","Si es muy alto da miedo"),
-            Palabra.new("ELEFANTE","Siempre va pa' lante"),
-            Palabra.new("ANACONDA","Te abraza hasta la muerte"),
-            Palabra.new("ORNITORRINCO","Es un detective"),
-            Palabra.new("DENTISTA","Te deja con la boca abierta")]
+            Word.new("REFRIGERADOR","Tan frio como el corazón de tu ex"),
+            Word.new("LAVADORA","Da vuelvas y vueltas "),
+            Word.new("BILLETERA","Te gusta tenerla gorda"),
+            Word.new("ESCOBA","Es largo con pelos"),
+            Word.new("LICUADORA","Tiene velocidades"),
+            Word.new("ZANCUDO","Te chupa la sangre"),
+            Word.new("CERVEZA","Te deja mareado"),
+            Word.new("CELULAR","No puedes vivir sin eso"),
+            Word.new("PROFESOR","Es hemano de Berlin"),
+            Word.new("VENTILADOR","Te deja despeinado"),
+            Word.new("TELEVISOR","Te entretiene cuando se prende"),
+            Word.new("COMPUTADORA","Tu mejor aliado"),
+            Word.new("EDIFICIO","Si es muy alto da miedo"),
+            Word.new("ELEFANTE","Siempre va pa' lante"),
+            Word.new("ANACONDA","Te abraza hasta la muerte"),
+            Word.new("ORNITORRINCO","Es un detective"),
+            Word.new("DENTISTA","Te deja con la boca abierta")]
         @status_message = ""
         @current_word_index = 0
-        @current_word = @original_words[0].palabra
+        @current_word = @original_words[0].word
         @success =0
     end
 
     def current_word
-        @current_word = @original_words[@current_word_index].palabra        
+        @current_word = @original_words[@current_word_index].word        
     end
 
     def scrambled_word
@@ -69,5 +69,9 @@ class Game
     
     def go_next_word
         @current_word_index += 1
+    end
+
+    def clue
+        @original_words[@current_word_index].clue
     end
 end

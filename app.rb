@@ -11,6 +11,7 @@ get '/' do
     @scrambled_word = @@game.scrambled_word
     @attempts = @@game.attempts
     @status_message = @@game.status_message
+    @clue = @@game.clue
     erb :game
 end
 
@@ -28,6 +29,7 @@ post '/validate' do
         @scrambled_word = @@game.scrambled_word
         @attempts = @@game.attempts
         @status_message = @@game.status_message
+        @clue = @@game.clue
         return erb :game  
             
     else 
@@ -39,6 +41,7 @@ post '/validate' do
         @scrambled_word = @@game.scrambled_word
         @attempts = @@game.attempts
         @status_message = @@game.status_message
+        @clue = @@game.clue
 
         return erb :game
     end
