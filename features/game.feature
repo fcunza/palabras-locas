@@ -24,5 +24,9 @@ Feature: Palabras locas
         When Fallo 3 veces
         Then mostrara la palabra "Perdiste"
 
-
+    Scenario: Usuario falló el máximo de intentos
+        Given Visitar la pagina inicial
+        When Fallo 3 veces
+        And Elige reintentar 
+        Then mostrara la palabra "Tienes 3 intentos"
     

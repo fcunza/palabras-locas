@@ -29,3 +29,7 @@ When(/^Fallo (\d+) veces$/) do |attempts|
     fill_in("answer", :with => "angel")
     click_button("Validar")
 end
+
+When(/^Elige reintentar$/) do
+    click_link("Reintentar")
+end
