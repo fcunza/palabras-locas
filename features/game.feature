@@ -30,7 +30,7 @@ Feature: Palabras locas
         And Elige reintentar 
         Then mostrara la palabra "Tienes 3 intentos"
 
-    Scenario: Usuario ganó luego de 5 aciertos
+    Scenario: Reintentar juevo tras perder
         Given Visitar la pagina inicial
         When acerto 5 veces
         Then mostrara la palabra "Ganaste"
